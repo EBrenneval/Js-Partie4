@@ -10,7 +10,7 @@ var remplaceECar = function (texte) {
     return texte.replace("e", " ");
 }
 var concatString = function (texte1, texte2) {
-    return texte1+texte2;
+    return texte1 + texte2;
 }
 var afficherCar5 = function (texte) {
     return texte.charAt(4);
@@ -33,25 +33,13 @@ var IsString = function (texte) {
   }
 }
 var AfficherExtensionString = function (texte) {
-  var array = texte.split(".");
-    return array[array.length -1 ];
+   return texte.split('.').pop();
 }
 var NombreEspaceString = function (texte) {
-  var nbrEspace =0;
-  for (var i = 0; i < texte.length; i++) {
-    texte[i]
-    if (texte[i]== " ") {
-      nbrEspace+=1;
-    }
-  }
-    return nbrEspace;
+  return texte.split(' ').length-1;
 }
 var InverseString = function (texte) {
-  var invers = "";
-  for (var i = texte.length-1; i >= 0 ; i--) {
-    var invers = invers+texte[i];
-  }
-    return invers ;
+return texte.split('').reverse().join('');
 }
 
 /**
@@ -68,12 +56,11 @@ var valeurAbsolueArray = function (array) {
 }
 
 var sufaceCercle = function (rayon) {
-    return Math.round(rayon*rayon*Math.PI);
+    return Math.round(rayon*rayon*Math.PI);// math.round : il arrondi a l'entier le plus proche.
 }
 var hypothenuse = function (ab, ac) {
     return Math.sqrt((ab*ab) + (ac*ac));
 }
 var calculIMC = function (poids, taille) {
-    var imc = (poids/(taille*taille))*100;
-    return Math.round (imc)/100;
+    return parseFloat((poids / Math.pow(taille,2)).toFixed(2));
 }
